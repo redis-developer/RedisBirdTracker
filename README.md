@@ -100,41 +100,30 @@ Sample JSON:
     }
 ```
 
-
-
-## Specific Bird Sightings
 | Key | Description |
 |---|---|
 | `bird:<BIRD_ID>:sightings` | All sightings for one specific bird `<BIRD_ID>` | 
-
-Sample Set:
-`[sighting:OBS541292727, sighting:OBS537451909, sighting:OBS538571392, ...]`
-
-| Key | Description |
-|---|---|
 | `location:<LOCATION_ID>:sightings`| All sightings for one specific `<LOCATION_ID>` |
-
-| Key | Description |
-|---|---|
 | `location:<LOCATION_ID>:birds`| All birds found in one specific `<LOCATION_ID>`|
 
 ### Sighting
-TODO:
-change 'date' to 'timestamp' when we switch to unix timestamp
 
+#### TODO:
+- change 'date' to 'timestamp' when we switch to unix timestamp
+- identify potential TAG words
 
 ### Location 
-Where the siting happened
+#### TODO:
+- GEOSPATIAL indexing on coordinates
+- Can we convert to and from LOCATION_ID and COUNTY_CODE?
 
-TODO: 
-GEOSPATIAL indexing on coordinates
-Conversion to and from LOCATION_ID and COUNTY_CODE?
+### Sighting
+#### TODO:
+- find TAG word candidates
+- clean up comments (some have white space and newline characters)
 
-Sighting -> Specific information on Location of Bird
 
-EBird Washington State Sighting Data from 2017 to present
-
-Sample JSON:
+Original Sample JSON:
 ```json
 {
     "GUID": "OBS541292727",
@@ -170,17 +159,14 @@ Sample JSON:
 ```
 
 
-## Technologies
+## Technologies to use
 
-Datastore: Redis Stack
-
-Backend: Flask or FastAPI (Python)
-Client: Redis Om Python
-Data ingestion: https://github.com/redis-developer/riot
-
-RedisInsight
-
-Frontend: React or Vue
+- Datastore: Redis Stack
+- Backend: Flask or FastAPI (Python)
+- Client: Redis Om Python
+- Data ingestion: https://github.com/redis-developer/riot
+- RedisInsight
+- Frontend: React or Vue
 
 
 
