@@ -158,6 +158,15 @@ Original Sample JSON:
 }
 ```
 
+## Loading the data into Redis
+Using Riot-File, navigate to the root directory of BirdTracker and run the following command:
+
+```bash
+riot-file -h 127.0.0.1 -p 6379 import ./data/bird_data.json json.set --keyspace=sighting --keys=GUID
+```
+
+This will insert each JSON object into a local redis instance. We are working with the raw JSON containing Sighting, Bird, and Location info all in one object. For now, we'll call the key namespace `sighting`. The unique id for each key will be the `GUID` already present in every JSON object.
+
 
 ## Technologies to use
 
